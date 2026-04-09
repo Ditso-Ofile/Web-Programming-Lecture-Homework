@@ -25,13 +25,75 @@
         </ul>
     </nav>
 
-    <main>
-        
+    <main
+         <main style="display: flex; flex-direction: column; align-items: center; padding: 20px;">
+    
+    <div style="background: #f4f4f4; border: 1px solid #ccc; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 25px; width: 500px;">
+        <div style="display: grid; grid-template-columns: 120px 220px 100px; gap: 12px; align-items: center;">
+            
+            <span>Size:</span>
+            <select id="sizeSelect" style="padding: 5px;">
+                <option value="Small">S (Personal)</option>
+                <option value="Medium" selected>M (Standard)</option>
+                <option value="Large">L (Family)</option>
+            </select>
+            <button onclick="doUpdateOrder()" style="grid-row: span 2; height: 100%; cursor: pointer; background: #d32f2f; color: white; border: none; border-radius: 4px; font-weight: bold;">Update Order</button>
+
+            <span>Add-ons:</span>
+            <select id="addonSelect" style="padding: 5px;">
+                <option value="Bacon">Bacon</option>
+                <option value="Peperoni">Peperoni</option>
+                <option value="Cheese">Extra Cheese</option>
+            </select>
+
+            <span>Pizza Type:</span>
+            <select id="typeSelect" style="padding: 5px;">
+                <option value="Peperoni">Peperoni</option>
+                <option value="BBQ">BBQ</option>
+                <option value="Chicken Ranch">Chicken Ranch</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Margereta">Margereta</option>
+            </select>
+            <button onclick="myPizza.show()" style="cursor: pointer; padding: 5px;">Show</button>
+
+            <span>Sides:</span>
+            <select id="sidesSelect" multiple style="height: 70px; padding: 5px;">
+                <option value="Fries">Fries</option>
+                <option value="Chicken Wings">Chicken Wings</option>
+                <option value="Drinks">Drinks</option>
+            </select>
+            <button onclick="myPizza.hide()" style="cursor: pointer; padding: 5px;">Hide</button>
+        </div>
+        <p style="font-size: 11px; color: #777; margin-top: 8px;">* Hold Ctrl/Cmd to select multiple sides.</p>
+    </div>
+
+    <div id="canvas" style="width: 800px; height: 500px; border: 2px solid #000; background: #fff; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        </div>
+
+    <script src="js/oojs.js"></script>
+
+    <script>
+        // Bridge function between HTML and the Class methods
+        function doUpdateOrder() {
+            const size = document.getElementById('sizeSelect').value;
+            const addon = document.getElementById('addonSelect').value;
+            const type = document.getElementById('typeSelect').value;
+            
+            // Collect multiple selected sides
+            const selectedSides = Array.from(document.getElementById('sidesSelect').selectedOptions)
+                                       .map(option => option.value);
+
+            if (myPizza) {
+                myPizza.processOrder(size, addon, type, selectedSides);
+            }
+        }
+    </script>
+</main>
     </main>
 
     <footer>
         <p>Created by: <strong>Ditso Ofile Mogajane (HH0DUU)</strong> & 
-        <strong>Aws Bader (neptunecode)</strong></p>
+        <strong>Aws Bader (ZUKGOB)</strong></p>
     </footer>
 
 </div>
