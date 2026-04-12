@@ -26,53 +26,47 @@
     </nav>
 
     <main>
-        <h1><center>JavaScript CRUD example</center></h1>
-	<hr>
-	<div class="employee-form">
-		<form onsubmit="event.preventDefault();onFormSubmit();">
-			<div>
-				<label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-				<input type="text" name="fullName" id="fullName">
-			</div>
-			<div>
-				<label>Email Id</label>
-				<input type="text" name="email" id="email">
-			</div>
-			<div>
-				<label>Salary</label>
-				<input type="text" name="salary" id="salary">
-			</div>
-			<div>
-				<label>City</label>
-				<input type="text" name="city" id="city">
-			</div>
-			<div  class="form-action-buttons">
-				<input type="submit" value="Submit">
-			</div>
-		</form>
-	</div>
-	<br/>
-	<div class = "employees-table">
-		<table class="list" id="employeeList">
-			<thead>
-				<tr>
-					<th>Full Name</th>
-					<th>Email Id</th>
-					<th>Salary</th>
-					<th>City</th>
-					<th>Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-	</div>
-    <script src="js/javascript-crud.js"></script>
+        <h1><center>JavaScript Pizza Menu CRUD</center></h1>
+        <hr>
+        <div class="pizza-form">
+            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                <div>
+                    <label>Pizza Name*</label><label class="validation-error hide" id="pizzaNameValidationError">This field is required.</label>
+                    <input type="text" name="pizzaName" id="pizzaName" placeholder="e.g. Margherita">
+                </div>
+                <div>
+                    <label>Category</label>
+                    <input type="text" name="category" id="category" placeholder="e.g. Vegetarian">
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="text" name="price" id="price" placeholder="e.g. 12.99">
+                </div>
+                <div class="form-action-buttons">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+        <br/>
+        <div class="pizzas-table">
+            <table class="list" id="pizzaList">
+                <thead>
+                    <tr>
+                        <th>Pizza Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <script src="js/javascript-crud.js"></script>
     </main>
 
     <footer>
-        <p>Created by: <strong>Ditso Ofile Mogajane (HH0DUU)</strong> & 
-        <strong>Aws Bader (neptunecode)</strong></p>
+        <p>Created by: <strong>Your Name Here</strong></p>
     </footer>
 
 </div>

@@ -26,8 +26,46 @@
     </nav>
 
     <main>
-        
-    </main>
+    <h1><center>Fetch API Pizza Menu CRUD</center></h1>
+    <hr>
+        <div class="pizza-form">
+            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                <input type="hidden" id="pizzaId" value="">
+                
+                <div>
+                    <label>Pizza Name*</label><label class="validation-error hide" id="pizzaNameValidationError">This field is required.</label>
+                    <input type="text" name="pizzaName" id="pizzaName" placeholder="e.g. Margherita">
+                </div>
+                <div>
+                    <label>Category</label>
+                    <input type="text" name="category" id="category" placeholder="e.g. Vegetarian">
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="text" name="price" id="price" placeholder="e.g. 12.99">
+                </div>
+                <div class="form-action-buttons">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+        <br/>
+        <div class="pizzas-table">
+            <table class="list" id="pizzaList">
+                <thead>
+                    <tr>
+                        <th>Pizza Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    <script src="js/fetchapi.js"></script>
+</main>
 
     <footer>
         <p>Created by: <strong>Ditso Ofile Mogajane (HH0DUU)</strong> & 
