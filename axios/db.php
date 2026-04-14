@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'databaselesson'; // Updated to match your .sql file
+$db   = 'databaselesson';
 $user = 'root';
 $pass = ''; 
 
