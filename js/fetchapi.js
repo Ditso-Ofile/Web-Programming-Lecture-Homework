@@ -22,11 +22,11 @@ function renderTable(pizzas) {
         row.insertCell(0).innerHTML = pizza.pizzaName;
         row.insertCell(1).innerHTML = pizza.category;
         
-        // Handle null 
+
         const priceDisplay = pizza.price ? "$" + pizza.price : "N/A";
         row.insertCell(2).innerHTML = priceDisplay;
         
-        // Edit/Delete
+  
         row.insertCell(3).innerHTML = `<a onClick="onEdit('${pizza.pizzaName}', '${pizza.category}')">Edit</a> 
                                        <a onClick="onDelete('${pizza.pizzaName}')">Delete</a>`;
     });
@@ -38,14 +38,14 @@ async function onFormSubmit() {
         const originalName = document.getElementById("pizzaId").value;
 
         if (originalName === "") {
-            // CREATE 
+
             await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
         } else {
-            // UPDATE
+
             formData.originalName = originalName;
             await fetch(API_URL, {
                 method: 'PUT',

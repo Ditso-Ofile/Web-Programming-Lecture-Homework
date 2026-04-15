@@ -73,13 +73,12 @@
     <script src="js/oojs.js"></script>
 
     <script>
-        // Bridge function between HTML and the Class methods
         function doUpdateOrder() {
             const size = document.getElementById('sizeSelect').value;
             const addon = document.getElementById('addonSelect').value;
             const type = document.getElementById('typeSelect').value;
             
-            // Collect multiple selected sides
+
             const selectedSides = Array.from(document.getElementById('sidesSelect').selectedOptions)
                                        .map(option => option.value);
 

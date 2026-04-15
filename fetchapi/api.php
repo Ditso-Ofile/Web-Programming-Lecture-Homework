@@ -1,5 +1,5 @@
 <?php
-// backend/fetchapi/api.php
+
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -12,7 +12,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'), true);
 
 switch ($method) {
-    case 'GET': // READ (JOIN pizzas and categories to get the price)
+    case 'GET': 
         $sql = "SELECT p.pname AS pizzaName, p.categoryname AS category, c.price 
                 FROM pizzas p 
                 LEFT JOIN categories c ON p.categoryname = c.cname";
@@ -27,11 +27,11 @@ switch ($method) {
         echo json_encode($pizzas);
         break;
 
-    case 'POST': // CREATE
+    case 'POST': 
         if(isset($input['pizzaName'])) {
             $name = $conn->real_escape_string($input['pizzaName']);
             $category = $conn->real_escape_string($input['category']);
-            // Assuming non-vegetarian by default for simple CRUD
+ 
             $vegetarian = 0; 
 
             $sql = "INSERT INTO pizzas (pname, categoryname, vegetarian) VALUES ('$name', '$category', $vegetarian)";
@@ -44,8 +44,8 @@ switch ($method) {
         }
         break;
 
-    case 'PUT': // UPDATE
-        // We use originalName to find the record, in case they want to rename the pizza
+    case 'PUT': 
+  
         if(isset($input['originalName'])) {
             $originalName = $conn->real_escape_string($input['originalName']);
             $newName = $conn->real_escape_string($input['pizzaName']);
@@ -61,7 +61,7 @@ switch ($method) {
         }
         break;
 
-    case 'DELETE': // DELETE
+    case 'DELETE': 
         if(isset($input['pizzaName'])) {
             $name = $conn->real_escape_string($input['pizzaName']);
             $sql = "DELETE FROM pizzas WHERE pname='$name'";

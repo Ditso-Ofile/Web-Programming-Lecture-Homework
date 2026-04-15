@@ -1,10 +1,10 @@
 <?php
-// backend/fetchapi/db.php
+
 
 $host = "localhost";
 $username = "root"; 
 $password = "";     
-$dbname = "databaselesson"; // Updated to match your SQL file
+$dbname = "databaselesson"; 
 
 $conn = new mysqli($host, $username, $password, $dbname);
 

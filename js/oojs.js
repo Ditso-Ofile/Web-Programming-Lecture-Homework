@@ -1,4 +1,4 @@
-// Base Class - Handles visual rendering
+
 class PizzaDisplay {
     constructor(src) {
         this.container = document.createElement("div");
@@ -20,7 +20,7 @@ class PizzaDisplay {
         this.container.appendChild(this.img);
         this.container.appendChild(this.label);
         
-        // Requirement: Append to document/container
+
         document.getElementById("canvas").appendChild(this.container);
     }
 
@@ -28,18 +28,18 @@ class PizzaDisplay {
     hide() { this.container.style.visibility = "hidden"; }
 }
 
-// Derived Class - Requirement: Inheritance (extends/super)
+
 class PizzaOrder extends PizzaDisplay {
     constructor(src) {
-        super(src); // Requirement: Super call
+        super(src);
     }
 
     processOrder(size, addon, type, sides) {
-        // Method to adjust visual size
+
         const sizeMap = { "Small": 150, "Medium": 250, "Large": 350 };
         this.img.width = sizeMap[size];
 
-        // Method to update object data display
+  
         this.label.innerHTML = `
             <h3 style="margin:0 0 10px 0; color: #d32f2f;">Order Summary</h3>
             <p><strong>Pizza:</strong> ${type}</p>
@@ -50,12 +50,12 @@ class PizzaOrder extends PizzaDisplay {
     }
 }
 
-// Global instance variable
+
 let myPizza;
 
-// Initialize when page loads
+
 window.addEventListener("load", () => {
     myPizza = new PizzaOrder("pizza.jpg");
-    // Default starting state
+
     myPizza.processOrder("Medium", "Bacon", "Peperoni", []);
 });

@@ -1,7 +1,7 @@
 var selectedIndex = null;
 var array1 = new Array();
 
-// dummy data to show it working
+
 array1.push({"pizzaName":"Margherita", "category":"Vegetarian", "price":"10.99"});
 array1.push({"pizzaName":"Pepperoni", "category":"Meat", "price":"12.99"});
 
