@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost/WEB-PROGRAMMING-LECTURE-HOMEWORK/fetchapi/api.php"; 
+const API_URL = "./fetchapi/api.phpp"; 
 
 window.addEventListener("DOMContentLoaded", fetchPizzas);
 
