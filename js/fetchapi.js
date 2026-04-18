@@ -1,5 +1,5 @@
 
-const API_URL = "./fetchapi/api.phpp"; 
+const API_URL = "./fetchapi/api.php"; 
 
 window.addEventListener("DOMContentLoaded", fetchPizzas);
 
